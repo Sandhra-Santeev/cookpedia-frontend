@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  server_url = "http://localhost:3000"
+  // server_url = "http://localhost:3000"
+  server_url = "https://cookpedia-backend-ekdr.onrender.com"
 
   constructor(private http:HttpClient) { }
   getAllrecipesAPI(){
