@@ -1,0 +1,22 @@
+<div class="container my-3 p-5 d-flex flex-column align-items-center justify-content-center" style="background-image: url('https://st3.depositphotos.com/1558912/19064/i/450/depositphotos_190644072-stock-photo-spices-herbs-and-olive-oil.jpg');background-repeat: no-repeat; background-position: center;background-size: cover;">
+    <h1>Login</h1>
+    <p>More than 100 Plus Sessions from Around the World</p>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" action="" class="shadow rounded p-5  ">
+        <h3 class="mb-3 text-center"><i class="fa-solid fa-graduation-cap me-2"></i>Cookpedia</h3>
+
+        <div class="mb-3">
+            <input type="email" name="email" formControlName="email" placeholder="E Mail" class="form-control">
+        </div>
+        @if(loginForm.get("email")?.errors &&loginForm.get("email")?.touched){
+            <div><p class="text-danger fw-bolder">*Invalid Email</p></div>
+        }
+
+        <div class="mb-3">
+            <input type="password" name="password" formControlName="password" placeholder="Password" class="form-control">
+        </div>
+        @if(loginForm.get("password")?.errors &&loginForm.get("password")?.touched){
+            <div><p class="text-danger fw-bolder">*Invalid Password</p></div>
+        }
+        <button type="submit" class="btn btn-success w-100">login</button>
+    </form>
+</div>

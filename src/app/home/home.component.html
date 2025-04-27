@@ -1,0 +1,122 @@
+<app-header></app-header>
+<div class="container mb-4">
+    <div class="row bg-success p-5 ">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <h1 class="text-light fw-bolder">
+                The Easiest Way <br> To Make Your <br> Favourite Meal
+
+            </h1>
+            <p style="text-align:justify;" class="my-4 text-light">Discover 100+ recipes in your hand with the best
+                recipe. Help you to find the easiest way to cook</p>
+            <a routerLink="/all-recipes" class="btn text-light" style="background-color: darkgreen ;">Explore Our
+                Recipes</a>
+
+
+        </div>
+        <div class="col-lg-6">
+            <img class="w-50 landingImg mt-5 mt-md-0" src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png"
+                alt="plate">
+        </div>
+    </div>
+
+
+    <!-- Popular recipes -->
+    <div class="my-5 p-5">
+        <h1>Popular Recipe of the Week</h1>
+        <div class="d-flex justify-content-between">
+            <p>Our most popular recipes of the week</p>
+            <a routerLink="/all-recipes">View All Recipes</a>
+        </div>
+
+        <div class="row my-3">
+
+            @for(recipes of allRecipes;track $index){
+                <div class="col-lg-4 mt-3">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top"
+                            [src]="recipes.image"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{recipes.name}}</h5>
+    
+                        </div>
+                    </div>
+    
+                </div>
+            }
+          
+          
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="row d-flex align-items-center"
+        style="height:400px;background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB1o2Z5XX6QdtaAfSpQ4TZuC6uPIC81xB4tg&s');background-repeat: no-repeat;background-size: cover;">
+        <div class="col-lg-6 ms-5 mt-5">
+            <div class="bg-light rounded p-5 w-75">
+                <h3>50+ Recipes That Very Quick And Fast</h3>
+                <p class="text-secondary mt-3">Find the perfect food ideas to start your day with the quick and easiest
+                    way</p>
+
+            </div>
+        </div>
+        <div class="col-lg-6"></div>
+    </div>
+
+    <!-- Download App -->
+    <div class="my-5 row d-flex align-items-center text-light bg-success rounded p-5" style="height:450px;">
+
+        <div class="col-lg-6 d-flex justify-content-center">
+            <img class="img-fluid"
+                src="https://toppng.com/uploads/thumbnail/android-app-on-google-play-11568829115kt4gig8l67.png "
+                alt="image">
+        </div>
+        <div class="col-lg-6 text-center">
+            <h1>Download App</h1>
+            <h5>Download the App from App Store or <br>Google Play for a better experience</h5>
+            <div class="row d-flex align-items-center   ">
+
+                <div class="col-6">
+                    <img width="150px"
+                        src="https://freepngimg.com/download/android/67006-app-play-google-android-store-free-clipart-hd.png "
+                        alt="google">
+
+
+                </div>
+                <div class="col-6">
+                    <img width="150px" src="https://benic360.com/wp-content/uploads/2020/06/apple-store-icon-png-8.png"
+                        alt="apple">
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- testimonials -->
+    <div class="text-center my-5">
+        <h1>Client Testimonials</h1>
+        <marquee behavior="scroll" direction="left">
+          <div class="d-flex my-5 flex-nowrap">
+            <div class="rounded border p-3 me-3" style="min-width: 250px;">
+              <h5>John Johnson</h5>
+              <p>Very useful website!!</p>
+            </div>
+            <div class="rounded border p-3 me-3" style="min-width: 250px;">
+              <h5>Anna Smith</h5>
+              <p>Helped me cook my first meal!</p>
+            </div>
+            <div class="rounded border p-3 me-3" style="min-width: 250px;">
+              <h5>David Lee</h5>
+              <p>Highly recommend for beginners.</p>
+            </div>
+          </div>
+        </marquee>
+      </div>
+      
+      
+
+</div>

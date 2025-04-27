@@ -1,0 +1,49 @@
+<div class="container d-flex justify-content-center align-items-center my-3"
+    style="background-image: url('https://st3.depositphotos.com/1558912/19064/i/450/depositphotos_190644072-stock-photo-spices-herbs-and-olive-oil.jpg');background-repeat: no-repeat; background-position: center;background-size: cover;">
+    <div class="row d-flex align-items-center justify-content-center ">
+        <div class="col-lg-6 p-5 ">
+            <form [formGroup]="registerForm" (ngSubmit)="register()" action="" class="shadow rounded p-5">
+                <h3 class="mb-3 text-center"><i class="fa-solid fa-graduation-cap me-2"></i>Cookpedia</h3>
+                <div class="mb-3">
+                    <input type="text" name="username" formControlName="username" placeholder="Username"
+                        class="form-control">
+                </div>
+                @if(registerForm.get('username')?.errors&&registerForm.get('username')?.touched){ <div>
+                    <p class="text-danger fw-bolder">*Invalid Username</p>
+                </div>
+                }
+                <div class="mb-3">
+                    <input type="email" name="email" formControlName="email" placeholder="E Mail" class="form-control">
+                </div>
+                @if(registerForm.get('email')?.errors&&registerForm.get('email')?.touched){ <div>
+                    <p class="text-danger fw-bolder">*Invalid Email</p>
+                </div>
+
+                }
+
+                <div class="mb-3">
+                    <input type="password" name="password" formControlName="password" placeholder="Password"
+                        class="form-control">
+                </div>
+                @if(registerForm.get('password')?.errors&&registerForm.get('password')?.touched){   <div>
+                    <p class="text-danger fw-bolder">*Invalid Password</p>
+                </div>
+                }
+                
+             
+
+                <button type="submit" class="btn btn-success w-100">register</button>
+            </form>
+        </div>
+        <div class="col-lg-6 p-5">
+            <h2>Create New Account</h2>
+            <h4 class="mb-3">What will you get?</h4>
+            <ul>
+                <li>Different Recipes</li>
+                <li>Easy wayto Make Recipe</li>
+                <li>Save your Favourite Recipes</li>
+                <li>Download your recipes</li>
+            </ul>
+        </div>
+    </div>
+</div>

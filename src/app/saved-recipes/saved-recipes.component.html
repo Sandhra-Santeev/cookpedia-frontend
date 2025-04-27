@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container mb-3">
+    <h1 class="my-5 fw-bolder text-center">Your Saved Recipes</h1>
+    <div class="row">
+        @if (savedRecipes.length>0) {
+            @for (item of savedRecipes; track $index) {
+                <div class="col-lg-4 mt-3">
+                    <div class="" style="width:100%;">
+                        <img routerLink="/recipe/{{item.recipeId}}/view" [src]="item.image" alt="image" class="card-img-top">
+                        <div class="card-body mt-3 d-flex align-items-center justify-content-between">
+                            <h5>{{item.name}}</h5>
+                            <button (click)="removedSavedRecipe(item._id)" class="btn btn-danger "><i class="fa-solid fa-trash text-white"></i></button>
+                        </div>
+    
+    
+                    </div>
+                </div>
+    
+            }
+        }
+        @else {
+            <div class="d-flex align-items-center justify-content-center">
+                <h3>No Saved Recipes</h3>
+                <button class="btn btn-success ms-5" routerLink="/all-recipes">Add Recipes</button>
+            </div>
+        }
+       
+    </div>
+</div>
